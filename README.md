@@ -1,4 +1,4 @@
-# The-Card-Prodject-
+# The-Card-Project-
 
 Members:
 - Alan Nguyen
