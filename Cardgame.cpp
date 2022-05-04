@@ -12,29 +12,29 @@ class card
 {
 public:
 	card() {
-		curcard = 0;
+		currentCard = 0;
 	}
 	
 	card(int val) {
-		curcard = val;
+		currentCard = val;
 	}
 
-	void setCard(card val) { curcard = val.cardType(); }
+	void setCard(card val) { currentCard = val.cardType(); }
 
-	void setCard(int val) { curcard = val; }
+	void setCard(int val) { currentCard = val; }
 
-	int valueofcard() { return value[curcard]; }
+	int valueofcard() { return value[currentCard]; }
 
-	string visual() { return vis[curcard]; }
+	string visual() { return vis[currentCard]; }
 
-	int cardType() { return curcard; }
+	int cardType() { return currentCard; }
 
-	void print() { cout << "[" << vis[curcard] << "]"; }
+	void print() { cout << "[" << vis[currentCard] << "]"; }
 private:
 	
 	string vis[16] = { "-3","A","2","3","4","5","6","7","8","9","10","J","Q","K","JK"," "};
 	int value[16] = { 100,1,2,3,4,5,6,7,8,9,10,10,0,-2,0};
-	int curcard;
+	int currentCard;
 	
 };
 
@@ -161,8 +161,6 @@ public:
 			}
 			cout << endl;
 		}
-
-	
 	}
 
 };
@@ -208,13 +206,15 @@ public:
 			}
 	}
 
+	/*
 	card takeFromDeck() {
-	
+		
 	}
 
 	card takeFromDiscard() {
 	
 	}
+	*/
 
 };
 
@@ -224,23 +224,9 @@ public:
 
 int main()
 {
-	bool game = false;
-	srand(time(0));
-    std::cout << "Hello World!\n";
+	player person;
+
+	person.print();
+
 	
-	while (game)
-	{
-
-	}
 }
-
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
