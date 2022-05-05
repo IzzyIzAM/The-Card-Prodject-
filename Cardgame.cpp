@@ -118,8 +118,9 @@ private:
 	bool cardvisable[2][3];
 	bool isPlayer;
 public:
+	//initializes a empty player
 	player() {
-	
+		
 	}
 
 	void setHand(card arry[6]) {
@@ -181,7 +182,7 @@ public:
 	}
 	
 	void score() {
-	//coint the players scores and draws them
+	//counts the players scores and displays the score at the end
 	
 	};
 	
@@ -191,8 +192,8 @@ public:
 	};
 
 	void pass() {
-	//draws 
-	//put it in discard
+	//draws : Takes a card from the top of the deck and 
+	//puts it in discard stash
 	};
 
 	void deal() {
@@ -205,7 +206,7 @@ public:
 			}
 	}
 
-	/*
+/*
 	card takeFromDeck() {
 		
 	}
@@ -213,7 +214,7 @@ public:
 	card takeFromDiscard() {
 	
 	}
-	*/
+*/
 
 };
 
@@ -225,8 +226,6 @@ int main()
 {
 	player person; // Creates a person object
 	cout << "** Current Players **" << endl;
-	person.print(); // Prints out the players 
 
-
-	
+	return 0;
 }
