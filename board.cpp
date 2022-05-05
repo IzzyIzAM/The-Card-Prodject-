@@ -1,4 +1,5 @@
 #include <iostream>
+#include "deck.cpp"
 using namespace std;
 
 class board {
