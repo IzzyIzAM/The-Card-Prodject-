@@ -31,7 +31,6 @@ public:
 
 	void print() { cout << "[" << vis[currentCard] << "]"; }
 private:
-	
 	string vis[16] = { "-3","A","2","3","4","5","6","7","8","9","10","J","Q","K","JK"," "};
 	int value[16] = { 100,1,2,3,4,5,6,7,8,9,10,10,0,-2,0};
 	int currentCard;
@@ -224,9 +223,10 @@ public:
 
 int main()
 {
-	player person;
+	player person; // Creates a person object
+	cout << "** Current Players **" << endl;
+	person.print(); // Prints out the players 
 
-	person.print();
 
 	
 }
