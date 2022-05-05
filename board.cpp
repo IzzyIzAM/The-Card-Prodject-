@@ -1,1 +1,54 @@
+#include <iostream>
+using namespace std;
 
+class board {
+private:
+	deckOfCards TheDeck;
+	player* players;
+	int* scoreboard;
+	int numOfPlayers;
+
+public:
+
+	board(int numOfPlayers) {
+		players = new player[numOfPlayers];
+		this->numOfPlayers = numOfPlayers;
+		scoreboard = new int[numOfPlayers];
+	
+	}
+	
+	void score() {
+	//counts the players scores and displays the score at the end
+	
+	};
+	
+	card draw() {
+	//draws the table
+		return TheDeck.draw();
+	};
+
+	void pass() {
+	//draws : Takes a card from the top of the deck and 
+	//puts it in discard stash
+	};
+
+	void deal() {
+		card arry[6];
+		for (int i = 0; i < numOfPlayers; i++)
+			for (int j = 0; j < 6; j++) {
+				arry[j].setCard(draw());
+				players[i].setHand(arry);
+
+			}
+	}
+
+/*
+	card takeFromDeck() {
+		
+	}
+	card takeFromDiscard() {
+	
+	}
+*/
+
+};
