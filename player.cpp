@@ -60,7 +60,7 @@ void player::swap(int r, int c, card theCard, deck theDeck)
 	theDeck.setDiscard(toDiscard);
 }
 
-bool flip(int r, int c)
+bool player::flip(int r, int c)
 {
 	// check if the card is face down
 	if (cardvisible[r][c] == false)
@@ -74,4 +74,18 @@ bool flip(int r, int c)
 		// return false, didn't flip
 		return false;
 	}
+}
+
+bool player::isAllFaceUp()
+{
+	// check for any unflipped cards
+	bool isAllFaceUp = true;
+	int c = 0;
+	do
+	{
+		// check each column
+		if (!(cardvisible[0][c] && cardvisible[1][c]))
+			isAllFaceUp = false;
+			
+	} while (isAllFaceUp);
 }
