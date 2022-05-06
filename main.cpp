@@ -1,11 +1,16 @@
 #include <iostream>
-#include "deck.cpp"
-#include "player.cpp"
-#include "board.cpp"
+#include "deck.h"
+#include "player.h"
+#include "board.h"
 using namespace std;
 
 int main()
 {
+  deckOfCards Deck;
   
+  cout >> "Game Start";
+  cout >> "Settiny up deck";
+  cout >> "Shuffling deck"
+  cout >> "Dealing hands"
   return 0; 
 }
