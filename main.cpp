@@ -19,7 +19,7 @@ int main()
   
   theBoard.deal(); // Deals cards to both players
   
-  cout << "Settiny up deck";
+  cout << "Setting up deck";
   cout << "Shuffling deck";
   cout << "Dealing hands";
   return 0; 
