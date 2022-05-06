@@ -80,12 +80,12 @@ bool player::isAllFaceUp()
 {
 	// check for any unflipped cards
 	bool isAllFaceUp = true;
-	int c = 0;
-	do
+	for (int i = 0; i < 2; i++)
 	{
-		// check each column
-		if (!(cardvisible[0][c] && cardvisible[1][c]))
+		if (!(cardvisible[0][i] && cardvisible[0][i]))
+		{
 			isAllFaceUp = false;
-			
-	} while (isAllFaceUp);
+			break;
+		}
+	}
 }

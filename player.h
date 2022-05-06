@@ -15,5 +15,5 @@ public:
     void print();
     void swap(int r, int c, card theCard, deck theDeck); // swap drawn card with existing one
     bool flip(int r, int c); // flip chosen card, return if true if flipped
-    bool isAllFaceUp();
+    bool isAllFaceUp(); // determines if play should end
 }
