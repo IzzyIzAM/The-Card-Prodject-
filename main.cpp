@@ -6,6 +6,8 @@ using namespace std;
 
 int main()
 {
+  deckOfCards Deck;
+  
   cout >> "Game Start";
   cout >> "Settiny up deck";
   cout >> "Shuffling deck"
