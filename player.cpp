@@ -82,10 +82,9 @@ bool player::isAllFaceUp()
 	bool isAllFaceUp = true;
 	for (int i = 0; i < 2; i++)
 	{
-		if (!(cardvisible[0][i] && cardvisible[0][i]))
+		if (!(cardvisible[0][i] && cardvisible[1][i]))
 		{
 			isAllFaceUp = false;
-			break;
 		}
 	}
 }
