@@ -34,7 +34,7 @@ public:
 	};
 
 	void deal() {
-		card arry[6];
+		card array[6];
 		for (int i = 0; i < numOfPlayers; i++)
 			for (int j = 0; j < 6; j++) {
 				arry[j].setCard(draw());
