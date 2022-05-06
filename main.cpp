@@ -6,7 +6,9 @@ using namespace std;
 
 int main()
 {
-  deckOfCards Deck;
+  deckOfCards theDeck;
+  
+  
   
   cout >> "Game Start";
   cout >> "Settiny up deck";
