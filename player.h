@@ -15,7 +15,7 @@ public:
     void placeCard(card theCard, int r, int c);
     card getCard(int r, int c);
     void print();
-    void swap(int r, int c, card theCard); // swap drawn card with existing one
+    void swap(int r, int c, card theCard, deckOfCards *theDeck); // swap drawn card with existing one
     bool flip(int r, int c); // flip chosen card, return if true if flipped
     bool isAllFaceUp(); // determines if play should end
     int score(); // return da score! haha!
