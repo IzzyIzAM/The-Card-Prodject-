@@ -1,2 +1,5 @@
 a.exe
-
+*.out
+*.h.gch
+./output
+./output.exe
