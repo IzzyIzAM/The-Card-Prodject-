@@ -32,7 +32,7 @@ int main()
   	cout << "**Setting Board and Hands**" << endl;
   	cout << endl; 
   
-  	//theBoard.deal(); // Deals cards to both players
+  	theBoard.deal(); // Deals cards to both players
   
   
   	cout << "Please enter the card you would like to flip in row 1(1-3): ";

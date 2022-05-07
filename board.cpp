@@ -63,13 +63,15 @@ using namespace std;
 
 	void Board::deal()
 	{
-		//player players;
 		card array[6];
+
 		for (int i = 0; i < numOfPlayers; i++)
+		{
 			for (int j = 0; j < 6; j++) {
 				array[j].setCard(TheDeck.draw());
-				players[i].setHand(array);
 			}
+			players[i].setHand(array);
+		}
 	}
 
 	card Board::takeFromDeck(bool isPlayer)
