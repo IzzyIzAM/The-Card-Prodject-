@@ -8,7 +8,7 @@ using namespace std;
 int main()
 {
 	Board theBoard(2); //Creates 2 players in the board
-  	deckOfCards decks(2);
+  	
   	card theCard;
 	
   	int currentTurn = 0;
@@ -43,10 +43,10 @@ int main()
   	cin >> column; 
   	theBoard.players[0].flip(2, column); // Flips players second chosen card
   
-  	theBoard.players[0].flip(1, rand() % 3 + 1); // Flips bots first card
-  	theBoard.players[0].flip(2, rand() % 3 + 1); // Flips bots second card
+  	theBoard.players[1].flip(1, rand() % 3 + 1); // Flips bots first card
+  	theBoard.players[1].flip(2, rand() % 3 + 1); // Flips bots second card
   
-  	decks.setDiscard(decks.draw()); // Sets top of discard pile
+  	theBoard.TheDeck->setDiscard(theBoard.TheDeck->draw()); // Sets top of discard pile
   
   	cout << endl;
   	cout << "**Starting game**" << endl;
@@ -62,7 +62,7 @@ int main()
 			cout << "**Player turn**" << endl;
 		 
      			// display available card from discard
-			theCard = decks.getDiscard();
+			theCard = theBoard.TheDeck->getDiscard();
 			cout << "Top of Discard Pile: ";
 			theCard.print(); // Prints the top of discard pile
 
