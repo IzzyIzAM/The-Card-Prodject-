@@ -18,6 +18,8 @@ int main()
   	int randRow;
   	int randCol
   	bool isPlayer = true;
+	int playerChoice;
+	int botChoice;
 
   
   	cout << "**Setting Board and Hands**" << endl;
@@ -48,8 +50,10 @@ int main()
  	while(gameOn) // Starts the game
  	{
 		int whoseTurn = currentTurn % theBoard.getNumPlayers();
-		if(whoseTurn == 0)
+		
+		if(whoseTurn == 0) // Player turn
 		{
+			isPlayer = true;
 			cout << "**Player turn**" << endl;
 		 
      			// display available card from discard
@@ -81,18 +85,46 @@ int main()
 			
 			if(playerChoice == 1)
 			{
-				theBoard.pass();
+				theBoard.pass(isPlayer);
 			}
 			else if(playerChoice == 2)
 			{
-				theBoard.takeFromDeck();	
+				theBoard.takeFromDeck(isPlayer);	
 			}
 			else if(playerChoice == 3)
 			{
-				theBoard.takeFromDiscard();	
+				theBoard.takeFromDiscard(isPlayer);	
 			}
 			
-			if(isAllFaceUp = true)
+			if(theBoard.players[0].isAllFaceUp() = true)
+			{
+				gameOn = false;
+			}
+			else
+			{
+				currentTurn++;	
+			}
+		}
+		
+		if(whoesTurn == 1) // Bots turn
+		{
+			botChoice = rand() % 3 + 1;
+			isPlayer = false;
+			
+			if(playerChoice == 1)
+			{
+				theBoard.pass(isPlayer);
+			}
+			else if(playerChoice == 2)
+			{
+				theBoard.takeFromDeck(isPlayer);	
+			}
+			else if(playerChoice == 3)
+			{
+				theBoard.takeFromDiscard(isPlayer);	
+			}
+			
+			if(theBoard.players[0].isAllFaceUp = true)
 			{
 				gameOn = false;
 			}
