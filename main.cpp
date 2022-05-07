@@ -8,7 +8,7 @@ using namespace std;
 int main()
 {
 	Board theBoard(2); //Creates 2 players in the board
-  	deckOfCards decks;
+  	deckOfCards decks(2);
   	card theCard;
 	
   	int currentTurn = 0;
@@ -30,9 +30,7 @@ int main()
 
   
   	cout << "**Setting Board and Hands**" << endl;
-  	cout << endl;
-
-  	deckOfCards theDeck(2); // Creates the Deck  
+  	cout << endl; 
   
   	theBoard.deal(); // Deals cards to both players
   
