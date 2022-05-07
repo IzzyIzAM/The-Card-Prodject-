@@ -70,7 +70,7 @@ bool player::flip(int r, int c)
 	if (cardvisable[r][c] == false)
 	{
 		// flip it and return true
-		cardvisable[r][c] == true;
+		cardvisable[r][c] = true;
 		return true;
 	}
 	else
