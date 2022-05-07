@@ -12,13 +12,13 @@ using namespace std;
 		scoreboard = new int[numOfPlayers];
 
 		// initialize deck
-		TheDeck = new deckOfCards(numPlayers);
+		TheDeck = new deckOfCards(numOfPlayers);
 	}
 
 	card Board::draw()
 	{
 		// draws the table
-		return TheDeck.draw();
+		return TheDeck->draw();
 	};
 
 	void Board::pass(bool isPlayer)
@@ -69,14 +69,16 @@ using namespace std;
 	{
 		// initialize hand to pass to player
 		card array[6];
-
+		cout << "start" << endl;
 		// for each player, draw 6 cards and
 		// pass them their new hand
 		for (int i = 0; i < numOfPlayers; i++)
 		{
 			// get new hand
+			cout << "big forloop" << endl;
 			for (int j = 0; j < 6; j++) {
-				array[j].setCard(TheDeck.draw());
+				cout << "Little forloop" << endl;
+				array[j].setCard(TheDeck->draw());
 			}
 			// set player's hand
 			players[i].setHand(array);
