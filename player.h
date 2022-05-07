@@ -1,4 +1,6 @@
 #pragma once
+#ifndef PLAYER_H
+#define PLAYER_H
 using namespace std;
 
 class player {
@@ -17,3 +19,5 @@ public:
     bool flip(int r, int c); // flip chosen card, return if true if flipped
     bool isAllFaceUp(); // determines if play should end
 }
+
+#endif
