@@ -50,9 +50,8 @@ void player::print() {
 	}
 }
 
-void player::swap(int r, int c, card theCard)
+void player::swap(int r, int c, card theCard, deckOfCards *theDeck)
 {
-	deckOfCards theDeck;
 	// set card to toDiscard, place passed card into hand
 	card toDiscard = hand[r][c];
 	hand[r][c] = theCard;
@@ -61,7 +60,7 @@ void player::swap(int r, int c, card theCard)
 	cardvisable[r][c] = true;
 
 	// discard toDiscard
-	theDeck.setDiscard(toDiscard);
+	theDeck->setDiscard(toDiscard);
 }
 
 bool player::flip(int r, int c)
