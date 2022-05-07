@@ -63,13 +63,18 @@ using namespace std;
 
 	void Board::deal()
 	{
+		// initialize hand to pass to player
 		card array[6];
 
+		// for each player, draw 6 cards and
+		// pass them their new hand
 		for (int i = 0; i < numOfPlayers; i++)
 		{
+			// get new hand
 			for (int j = 0; j < 6; j++) {
 				array[j].setCard(TheDeck.draw());
 			}
+			// set player's hand
 			players[i].setHand(array);
 		}
 	}
