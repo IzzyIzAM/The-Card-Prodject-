@@ -145,8 +145,8 @@ int main()
 	cout << endl;
 	cout << endl;
 	
-	playerScore = board.playerScore();
-	botScore = board.botScore();
+	playerScore = theBoard.players[0].score();
+	botScore = theBoard.player[1].score();
 	
 	if(playerScore > botScore)
 	{
