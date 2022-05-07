@@ -6,9 +6,13 @@ using namespace std;
 
 	Board::Board(int numOfPlayers) 
 	{
+		// dynamically allocate players
 		players = new player[numOfPlayers];
 		this->numOfPlayers = numOfPlayers;
 		scoreboard = new int[numOfPlayers];
+
+		// initialize deck
+		TheDeck = new deckOfCards(numPlayers);
 	}
 
 	card Board::draw()
