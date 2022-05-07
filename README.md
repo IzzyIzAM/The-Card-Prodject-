@@ -9,21 +9,13 @@
 
   <p align="center">
   The objective is for players to reduce the value of the cards in front of them by swapping them for lesser value cards and trying to get the lowest score. The highest score loses the game and the lowest score wins the game.    
-    
+
   </p>
 </div>
 
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
-
-Here's a blank template to get started: To avoid retyping too much info. Do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-
 
 ### Built With
 
@@ -78,8 +70,3 @@ Project Link: [https://github.com/IzzyIzAM/The-Card-Prodject-.git](https://githu
 * [Edwin Soto-Villela](https://github.com/edwinsoto88)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
-
-# Articles on what helped
-- https://bicyclecards.com/how-to-play/six-card-golf/
-- https://www.youtube.com/watch?v=6A28TM3koo4
