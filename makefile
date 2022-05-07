@@ -5,7 +5,7 @@ board.o: board.h board.cpp
 	g++ -c board.h board.cpp
 
 deck.o: deck.h deck.cpp
-	g++ -c deck.h deck.cpp
+	g++ -c -w deck.h deck.cpp
 
 main.o: main.cpp
 	g++ -c main.cpp
@@ -18,4 +18,4 @@ run:
 	./output
 
 clean:
-	rm a.exe a.out *.o *.h.gch output
+	rm *.o *.h.gch output
