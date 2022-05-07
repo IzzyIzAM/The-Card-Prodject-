@@ -34,17 +34,16 @@ int main()
   
   	theBoard.deal(); // Deals cards to both players
   
-  
   	cout << "Please enter the card you would like to flip in row 1(1-3): ";
   	cin >> column;
-  	theBoard.players[0].flip(1, column); // Flips players first chosen card
+  	theBoard.players[0].flip(0, column - 1); // Flips players first chosen card
   
   	cout << "Please enter the card you would like to flip in row 2(1-3): ";
   	cin >> column; 
-  	theBoard.players[0].flip(2, column); // Flips players second chosen card
+  	theBoard.players[0].flip(1, column - 1); // Flips players second chosen card
   
-  	theBoard.players[1].flip(1, rand() % 3 + 1); // Flips bots first card
-  	theBoard.players[1].flip(2, rand() % 3 + 1); // Flips bots second card
+  	theBoard.players[1].flip(0, rand() % 3); // Flips bots first card
+  	theBoard.players[1].flip(1, rand() % 3); // Flips bots second card
   
   	theBoard.TheDeck->setDiscard(theBoard.TheDeck->draw()); // Sets top of discard pile
   
