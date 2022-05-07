@@ -20,8 +20,8 @@ public:
     card takeFromDeck(bool);
     card takeFromDiscard(bool);
     int getNumPlayers(); 
+	deckOfCards *TheDeck;
 private: 
-    deckOfCards TheDeck;
     int *scoreboard;
     int numOfPlayers;
 };
