@@ -63,7 +63,7 @@ using namespace std;
 
 	void Board::deal()
 	{
-		player players;
+		//player players;
 		card array[6];
 		for (int i = 0; i < numOfPlayers; i++)
 			for (int j = 0; j < 6; j++) {
