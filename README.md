@@ -4,9 +4,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-   <a href="https://github.com/IzzyIzAM/The-Card-Prodject-.git">
-    <img src="https://user-images.githubusercontent.com/61428070/167268790-a4bfa611-c39c-469a-9a36-43eaf46c6ffb.jpg" alt="Logo" width="80" height="80">
-   </a>
 <h3 align="center">Golf Card Game</h3>
 
   <p align="center">
@@ -17,8 +14,9 @@
 
 
 <!-- ABOUT THE PROJECT -->
-## About The Project
 
+## About The Project
+![Golf_card_game](https://user-images.githubusercontent.com/61428070/167268850-c55f2cc3-76db-4129-a706-01d6f04d0e84.jpg)
 ### Built With
 
 * [C++](https://www.cplusplus.com/)
