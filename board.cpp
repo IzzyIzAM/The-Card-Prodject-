@@ -23,8 +23,7 @@ using namespace std;
 
 	void Board::pass(bool isPlayer)
 	{
-		deckOfCards d1;
-		player play;
+		
 		bool isFlipped = false;
 		int row_choice, col_choice;
 		int randomRow, randomCol;
@@ -32,12 +31,14 @@ using namespace std;
 		// draws : Takes a card from the top of the deck and
 		// puts it in discard stash
 		if(isPlayer == true) {
-			d1.setDiscard(d1.draw());
+			TheDeck->setDiscard(TheDeck->draw());
 			cout << "Please enter a row number(between 1-2): ";
 			cin >> row_choice;
 			cout << "Please enter a col number(between 1-3): ";
 			cin >> col_choice;
-
+			
+			isFlipped = players[0].flip(row_choice-1, col_choice-1);
+			
 			while(!isFlipped)
 			{
 				cout << "This card is already facing up." << endl;
@@ -46,21 +47,23 @@ using namespace std;
 				cout << "Please re-enter a col number(between 1-3): ";
 				cin >> col_choice;
 
-				isFlipped = play.flip(row_choice, col_choice);
+				isFlipped = players[0].flip(row_choice-1, col_choice-1);
 			}
 		}
 		//BOTS CHOICE	
 		else
 		{
-			d1.setDiscard(d1.draw());
-			randomRow = rand()%2 + 1;
-			randomCol = rand()%3 + 1;
-
+			TheDeck->setDiscard(TheDeck->draw());
+			randomRow = rand()%2;
+			randomCol = rand()%3;
+			
+			isFlipped = players[1].flip(randomRow-1, randomCol-1);
+			
 			while (!isFlipped)
 			{
-				randomRow = rand() % 2 + 1;
-				randomCol = rand() % 3 + 1;
-				isFlipped = play.flip(randomRow, randomCol);
+				randomRow = rand() % 2;
+				randomCol = rand() % 3;
+				isFlipped = players[1].flip(randomRow-1, randomCol-1);
 			}
 		}	
 	}
@@ -69,15 +72,12 @@ using namespace std;
 	{
 		// initialize hand to pass to player
 		card array[6];
-		cout << "start" << endl;
 		// for each player, draw 6 cards and
 		// pass them their new hand
 		for (int i = 0; i < numOfPlayers; i++)
 		{
 			// get new hand
-			cout << "big forloop" << endl;
 			for (int j = 0; j < 6; j++) {
-				cout << "Little forloop" << endl;
 				array[j].setCard(TheDeck->draw());
 			}
 			// set player's hand
@@ -87,15 +87,14 @@ using namespace std;
 
 	card Board::takeFromDeck(bool isPlayer)
 	{
-		deckOfCards d1;
+	
 		card TheCard;
-		player play;
 
 		bool isFlipped = false;
 		int user_choice;
 		int row_choice, col_choice, bot_choice_row, bot_choice_col, bot_choice;
 
-		TheCard = d1.draw();
+		TheCard = TheDeck->draw();
 
 		if(isPlayer)
 		{
@@ -111,6 +110,8 @@ using namespace std;
 				cin >> row_choice;
 				cout << "Please enter a col number(between 1-3): ";
 				cin >> col_choice;
+				
+				isFlipped = players[0].flip(row_choice-1, col_choice-1);
 
 				while (!isFlipped)
 				{
@@ -120,14 +121,14 @@ using namespace std;
 					cout << "Please re-enter a col number(between 1-3): ";
 					cin >> col_choice;
 
-					isFlipped = play.flip(row_choice, col_choice);
+					isFlipped = players[0].flip(row_choice-1, col_choice-1);
 				}
 
-				play.swap(row_choice, col_choice, TheCard);
+				players[0].swap(row_choice-1, col_choice-1, TheCard);
 			}
 			else if (user_choice == 2)
 			{
-				d1.setDiscard(TheCard);
+				TheDeck->setDiscard(TheCard);
 			}
 		}
 		// BOT
@@ -137,35 +138,36 @@ using namespace std;
 
 			if (bot_choice == 1)
 			{
-				bot_choice_row = rand()% 2 + 1;
-				bot_choice_col = rand()% 3 + 1;
+				bot_choice_row = rand()% 2;
+				bot_choice_col = rand()% 3;
+				
+				isFlipped = players[1].flip(bot_choice_row, bot_choice_col);
 
 				while (!isFlipped)
 				{
-					bot_choice_row = rand() % 2 + 1;
-					bot_choice_col = rand() % 3 + 1;
+					bot_choice_row = rand() % 2;
+					bot_choice_col = rand() % 3;
 
-					isFlipped = play.flip(bot_choice_row, bot_choice_col);
+					isFlipped = players[1].flip(bot_choice_row, bot_choice_col);
 				}
 
-				play.swap(bot_choice_row, bot_choice_col, TheCard);
+				players[1].swap(bot_choice_row, bot_choice_col, TheCard);
 			}
 			else if (bot_choice == 2)
 			{
-				d1.setDiscard(TheCard);
+				TheDeck->setDiscard(TheCard);
 			}
 		}
 	}
 
 	card Board::takeFromDiscard(bool isPlayer)
 	{
-		deckOfCards d1;
+		
 		card TheCard;
-		player play;
 		int row_choice, col_choice, bot_choice_row, bot_choice_col;
 		bool isFlipped = false;
 
-		TheCard = d1.getDiscard();
+		TheCard = TheDeck->getDiscard();
 
 		if (isPlayer)
 		{
@@ -173,6 +175,8 @@ using namespace std;
 			cin >> row_choice;
 			cout << "Please enter a col number(between 1-3): ";
 			cin >> col_choice;
+
+			isFlipped = players[0].flip(row_choice-1, col_choice-1);
 
 			while (!isFlipped)
 			{
@@ -182,22 +186,25 @@ using namespace std;
 				cout << "Please re-enter a col number(between 1-3): ";
 				cin >> col_choice;
 
-				isFlipped = play.flip(row_choice, col_choice);
+				isFlipped = players[0].flip(row_choice-1, col_choice-1);
 			}
-			play.swap(row_choice, col_choice, TheCard);
+			players[0].swap(row_choice, col_choice, TheCard);
+
 		}
 		else{
-			bot_choice_row = rand() % 2 + 1;
-			bot_choice_col = rand() % 3 + 1;
+			bot_choice_row = rand() % 2;
+			bot_choice_col = rand() % 3;
+			
+			isFlipped = players[1].flip(bot_choice_row, bot_choice_col);
 
 			while (!isFlipped)
 			{
-				bot_choice_row = rand() % 2 + 1;
-				bot_choice_col = rand() % 3 + 1;
+				bot_choice_row = rand() % 2;
+				bot_choice_col = rand() % 3;
 
-				isFlipped = play.flip(bot_choice_row, bot_choice_col);
+				isFlipped = players[1].flip(bot_choice_row, bot_choice_col);
 			}
-			play.swap(bot_choice_row, bot_choice_col, TheCard);
+			players[1].swap(bot_choice_row, bot_choice_col, TheCard);
 		}
 	}
 
