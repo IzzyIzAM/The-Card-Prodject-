@@ -10,16 +10,23 @@ int main()
 	board theBoard(2);
   	deckOfCards decks;
   	card theCard;
+	
   	int currentTurn = 0;
   	bool gameOn = true;
-  	int playerAmount;
+	
   	int row;
   	int column;
+	
   	int randRow;
   	int randCol
+		
   	bool isPlayer = true;
+	
 	int playerChoice;
 	int botChoice;
+	
+	int playerScore;
+	int botScore
 
   
   	cout << "**Setting Board and Hands**" << endl;
@@ -134,6 +141,23 @@ int main()
 			}
 		}
  	}
+	
+	cout << endl;
+	cout << endl;
+	
+	playerScore = board.playerScore();
+	botScore = board.botScore();
+	
+	if(playerScore > botScore)
+	{
+		cout << "**Player Wins!!**" << endl;	
+	}
+	else if(botScore > playerScore)
+	{
+		cout << "**Opponent Wins...**" << endl;	
+	}
+	else
+		cout << "**Tied Match**" << endl;
  
 
   	return 0; 
