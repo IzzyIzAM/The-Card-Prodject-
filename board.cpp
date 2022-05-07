@@ -68,7 +68,7 @@ using namespace std;
 		for (int i = 0; i < numOfPlayers; i++)
 			for (int j = 0; j < 6; j++) {
 				array[j].setCard(draw());
-				players.setHand(array);
+				players[i].setHand(array);
 			}
 	}
 
