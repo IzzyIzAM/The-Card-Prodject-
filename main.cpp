@@ -7,7 +7,7 @@ using namespace std;
 
 int main()
 {
-	board theBoard(2);
+	Board theBoard(2); //Creates 2 players in the board
   	deckOfCards decks;
   	card theCard;
 	
@@ -18,7 +18,7 @@ int main()
   	int column;
 	
   	int randRow;
-  	int randCol
+  	int randCol;
 		
   	bool isPlayer = true;
 	
@@ -26,13 +26,13 @@ int main()
 	int botChoice;
 	
 	int playerScore;
-	int botScore
+	int botScore;
 
   
   	cout << "**Setting Board and Hands**" << endl;
   	cout << endl;
 
-  	deckOfCards theDeck; // Creates the Deck  
+  	deckOfCards theDeck(2); // Creates the Deck  
   
   	theBoard.deal(); // Deals cards to both players
   
@@ -48,7 +48,7 @@ int main()
   	theBoard.players[0].flip(1, rand() % 3 + 1); // Flips bots first card
   	theBoard.players[0].flip(2, rand() % 3 + 1); // Flips bots second card
   
-  	decks.setDiscard(deck.draw()); // Sets top of discard pile
+  	decks.setDiscard(decks.draw()); // Sets top of discard pile
   
   	cout << endl;
   	cout << "**Starting game**" << endl;
@@ -103,7 +103,7 @@ int main()
 				theBoard.takeFromDiscard(isPlayer);	
 			}
 			
-			if(theBoard.players[0].isAllFaceUp() = true)
+			if(theBoard.players[0].isAllFaceUp() == true)
 			{
 				gameOn = false;
 			}
@@ -113,7 +113,7 @@ int main()
 			}
 		}
 		
-		if(whoesTurn == 1) // Bots turn
+		if(whoseTurn == 1) // Bots turn
 		{
 			botChoice = rand() % 3 + 1;
 			isPlayer = false;
@@ -131,7 +131,7 @@ int main()
 				theBoard.takeFromDiscard(isPlayer);	
 			}
 			
-			if(theBoard.players[0].isAllFaceUp = true)
+			if(theBoard.players[0].isAllFaceUp() == true)
 			{
 				gameOn = false;
 			}
@@ -146,7 +146,7 @@ int main()
 	cout << endl;
 	
 	playerScore = theBoard.players[0].score();
-	botScore = theBoard.player[1].score();
+	botScore = theBoard.players[1].score();
 	
 	if(playerScore > botScore)
 	{

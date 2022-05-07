@@ -1,10 +1,10 @@
-#pragma once
 #ifndef PLAYER_H
 #define PLAYER_H
+#include "deck.h"
 using namespace std;
 
 class player {
-    private:
+private:
 	card hand[2][3];
 	bool cardvisable[2][3];
 	bool isPlayer;
@@ -15,10 +15,10 @@ public:
     void placeCard(card theCard, int r, int c);
     card getCard(int r, int c);
     void print();
-    void swap(int r, int c, card theCard, deck theDeck); // swap drawn card with existing one
+    void swap(int r, int c, card theCard); // swap drawn card with existing one
     bool flip(int r, int c); // flip chosen card, return if true if flipped
     bool isAllFaceUp(); // determines if play should end
     int score(); // return da score! haha!
-}
+};
 
 #endif

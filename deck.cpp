@@ -27,7 +27,12 @@ void deckOfCards::reset() {
 	index = 0;
 }
 
-deckOfCards(int num) {
+deckOfCards::deckOfCards()
+{
+	int currentCard = NULL;
+}
+
+deckOfCards::deckOfCards(int num) {
 
 	numdeck = num / 2;
 	totalcards = 52 * numdeck;

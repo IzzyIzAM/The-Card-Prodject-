@@ -3,7 +3,8 @@
 #include <iostream>
 using namespace std;
 
-player() {
+player::player()
+{
 	
 }
 
@@ -49,14 +50,15 @@ void player::print() {
 	}
 }
 
-void player::swap(int r, int c, card theCard, deck theDeck)
+void player::swap(int r, int c, card theCard)
 {
+	deckOfCards theDeck;
 	// set card to toDiscard, place passed card into hand
 	card toDiscard = hand[r][c];
 	hand[r][c] = theCard;
 
 	// make sure card is flipped rightside-up
-	cardvisible[r][c] = true;
+	cardvisable[r][c] = true;
 
 	// discard toDiscard
 	theDeck.setDiscard(toDiscard);
@@ -65,10 +67,10 @@ void player::swap(int r, int c, card theCard, deck theDeck)
 bool player::flip(int r, int c)
 {
 	// check if the card is face down
-	if (cardvisible[r][c] == false)
+	if (cardvisable[r][c] == false)
 	{
 		// flip it and return true
-		cardvisible[r][c] == true;
+		cardvisable[r][c] == true;
 		return true;
 	}
 	else
@@ -84,7 +86,7 @@ bool player::isAllFaceUp()
 	bool isAllFaceUp = true;
 	for (int i = 0; i < 2; i++)
 	{
-		if (!(cardvisible[0][i] && cardvisible[1][i]))
+		if (!(cardvisable[0][i] && cardvisable[1][i]))
 		{
 			isAllFaceUp = false;
 		}

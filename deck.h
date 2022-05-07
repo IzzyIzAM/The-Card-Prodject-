@@ -45,11 +45,17 @@ private:
 	void reset();
 
 public:
-	deckOfCards(int num);
+	deckOfCards(); // Default Constructor
+	deckOfCards(int num); // Parameterized Constructor
 
 	void randomize();
 
-	card draw();
+	card draw()
+	{
+		int i = index;
+		index++;
+		return deck[i];
+	}
 
 	void setDiscard(card car) { discard.setCard(car); };
 
