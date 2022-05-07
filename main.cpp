@@ -85,6 +85,7 @@ int main()
 					cout << "Please enter a valid choice: ";
 					cin >> playerChoice;
 				}
+				break;
 			}
 			
 			if(playerChoice == 1)
@@ -95,13 +96,16 @@ int main()
 			{
 				theBoard.takeFromDeck(isPlayer);	
 			}
-			else if(playerChoice == 3)
+			else
 			{
 				theBoard.takeFromDiscard(isPlayer);	
 			}
 			
+			cout << "TRY HERE" << endl;
+			
 			if(theBoard.players[0].isAllFaceUp() == true)
 			{
+				cout << "OVER HERE" << endl;
 				gameOn = false;
 			}
 			else
