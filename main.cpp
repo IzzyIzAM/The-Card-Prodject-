@@ -87,7 +87,7 @@ int main()
 				}
 				break;
 			}
-			
+			/*
 			if(playerChoice == 1)
 			{
 				theBoard.pass(isPlayer);
@@ -99,6 +99,26 @@ int main()
 			else
 			{
 				theBoard.takeFromDiscard(isPlayer);	
+				cout << "after DISCARD" << endl;
+			}
+			*/
+			
+			switch(playerChoice)
+			{
+				
+				case 1:
+					theBoard.pass(isPlayer);
+					break;
+					
+				case 2:
+					theBoard.takeFromDeck(isPlayer);
+					break;
+				
+				case 3:
+					theBoard.takeFromDiscard(isPlayer);
+					cout << "after DISCARD" << endl;
+					break;
+				
 			}
 			
 			cout << "TRY HERE" << endl;
