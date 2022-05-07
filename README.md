@@ -48,8 +48,21 @@ To start off, you will need to check what version of C++ you are running on your
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
+### Execution
 
-
+1. Run the **make** command in your Linux terminal
+   ```sh
+   make
+   ```
+2. Once the program has successfully executed, you should see an output file name **output**. To execute add './' to the output file, like so:
+   ```sh
+   ./output
+   ```
+3. When finished, run the **make clean** to clean up the files left over from compilation
+   ```sh
+   make clean
+   ```
+   
 <!-- CONTACT -->
 ## Contact
 
