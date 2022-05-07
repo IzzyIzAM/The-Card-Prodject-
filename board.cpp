@@ -5,11 +5,11 @@ using namespace std;
 class board {
 private:
 	deckOfCards TheDeck;
-	player* players;
 	int* scoreboard;
 	int numOfPlayers;
 
 public:
+	player* players;
 
 	board(int numOfPlayers) {
 		players = new player[numOfPlayers];
@@ -51,5 +51,6 @@ public:
 	
 	}
 */
+	int getNumPlayers() { return numOfPlayers; };
 
 };

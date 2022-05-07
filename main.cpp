@@ -7,8 +7,7 @@ using namespace std;
 
 int main()
 {
-  board theBoard;
-  player thePlayer; // Creates Player 1
+  board theBoard(2);
   deckOfCards decks;
   card theCard;
   int currentTurn = 1;
@@ -30,14 +29,14 @@ int main()
   
   cout << "Please enter the card you would like to flip in row 1(1-3): ";
   cin >> column;
-  thePlayer.flip(1, column); // Flips players first chosen card
+  theBoard.players[0].flip(1, column); // Flips players first chosen card
   
   cout << "Please enter the card you would like to flip in row 2(1-3): ";
   cin >> column; 
-  thePlayer.flip(2, column); // Flips players second chosen card
+  theBoard.players[0].flip(2, column); // Flips players second chosen card
   
-  thePlayer.flip(1, rand() % 3 + 1); // Flips bots first card
-  thePlayer.flip(2, rand() % 3 + 1); // Flips bots second card
+  theBoard.players[0].flip(1, rand() % 3 + 1); // Flips bots first card
+  theBoard.players[0].flip(2, rand() % 3 + 1); // Flips bots second card
   
   decks.setDiscard(deck.draw()); // Sets top of discard pile
   
@@ -47,22 +46,24 @@ int main()
   
  while(gameOn) // Starts the game
  {
-	 
-	 if(currentTurn = 1)
+	 int whoseTurn = currentTurn % theBoard.getNumPlayers();
+	 if(whoseTurn == 0)
 	 {
 		 
 		 cout << "**Player turn**" << endl;
 		 
+     // display available card from discard
 		 theCard = decks.getDiscard();
 		 cout << "Top of Discard Pile: ";
 		 theCard.print(); // Prints the top of discard pile
-		 
-		 cout << endl; 
-		 player.print();
-		 
-		 
-		 
-		 
+
+     // displayer both "player's" hands
+     cout << "\n\nThe Player's Hand:\n";
+     theBoard.players[0].print();
+     cout << "\n\nOpponent's Hand:\n";
+     theBoard.players[1].print();
+
+     // present play options
 	 }
 	 
  }
