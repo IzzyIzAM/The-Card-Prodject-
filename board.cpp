@@ -124,7 +124,7 @@ using namespace std;
 					isFlipped = players[0].flip(row_choice-1, col_choice-1);
 				}
 
-				players[0].swap(row_choice-1, col_choice-1, TheCard);
+				players[0].swap(row_choice-1, col_choice-1, TheCard, TheDeck);
 			}
 			else if (user_choice == 2)
 			{
@@ -151,7 +151,7 @@ using namespace std;
 					isFlipped = players[1].flip(bot_choice_row, bot_choice_col);
 				}
 
-				players[1].swap(bot_choice_row, bot_choice_col, TheCard);
+				players[1].swap(bot_choice_row, bot_choice_col, TheCard, TheDeck);
 			}
 			else if (bot_choice == 2)
 			{
@@ -188,7 +188,8 @@ using namespace std;
 
 				isFlipped = players[0].flip(row_choice-1, col_choice-1);
 			}
-			players[0].swap(row_choice, col_choice, TheCard);
+			players[0].swap(row_choice, col_choice, TheCard, TheDeck);
+			cout << "Swapped" << endl;
 
 		}
 		else{
@@ -204,7 +205,7 @@ using namespace std;
 
 				isFlipped = players[1].flip(bot_choice_row, bot_choice_col);
 			}
-			players[1].swap(bot_choice_row, bot_choice_col, TheCard);
+			players[1].swap(bot_choice_row, bot_choice_col, TheCard, TheDeck);
 		}
 	}
 
