@@ -36,8 +36,10 @@ card player::getCard(int r, int c) {
 void player::print() {
 	//prints the players hand
 	card ret(15);
-	for (int i = 0; i < 2; i++) {
-		for (int j = 0; j < 3; j++) {
+	for (int i = 0; i < 2; i++)
+	{
+		for (int j = 0; j < 3; j++)
+		{
 			if (cardvisable[i][j])
 				hand[i][j].print();
 			else
