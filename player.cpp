@@ -90,3 +90,22 @@ bool player::isAllFaceUp()
 		}
 	}
 }
+
+int player::score()
+{
+	// check all the rules!
+	// some variables for DA RULES!
+	int totalScore = 0;
+
+	for (int i = 0; i < 3; i++)
+	{
+		// count card values if they're not a pair
+		if (hand[0][i].valueofcard() != hand[1][i].valueofcard())
+		{
+			totalScore += hand[0][i].valueofcard();
+			totalScore += hand[1][i].valueofcard();
+		}
+	}
+
+	return totalScore;
+}

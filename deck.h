@@ -12,23 +12,21 @@ using namespace std;
 class card
 {
 public:
-	card() { currentCard = 0; }
+	card() { currentCard = 0; };
 
-	card(int val) {
-		currentCard = val;
-	}
+	card(int val) { currentCard = val; };
 
-	void setCard(card val) { currentCard = val.cardType(); }
+	void setCard(card val) { currentCard = val.cardType(); };
 
-	void setCard(int val) { currentCard = val; }
+	void setCard(int val) { currentCard = val; };
 
-	int valueofcard() { return value[currentCard]; }
+	int valueofcard() { return value[currentCard]; };
 
-	string visual() { return vis[currentCard]; }
+	string visual() { return vis[currentCard]; };
 
-	int cardType() { return currentCard; }
+	int cardType() { return currentCard; };
 
-	void print() { cout << "[" << vis[currentCard] << "]"; }
+	void print() { cout << "[" << vis[currentCard] << "]"; };
 private:
 	string vis[16] = { "-3","A","2","3","4","5","6","7","8","9","10","J","Q","K","JK"," " };
 	int value[16] = { 100,1,2,3,4,5,6,7,8,9,10,10,0,-2,0 };
