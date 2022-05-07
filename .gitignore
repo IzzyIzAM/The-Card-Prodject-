@@ -3,3 +3,4 @@ a.exe
 *.h.gch
 ./output
 ./output.exe
+.vscode
