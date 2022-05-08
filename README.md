@@ -79,7 +79,7 @@ Project Link: [https://github.com/IzzyIzAM/The-Card-Prodject-.git](https://githu
 
 * [Alan Nguyen](https://github.com/NightOfDevils)
 * [Elizabeth Behrend](https://github.com/IzzyIzAM)
-* [Erin Hook](https://github.com/KingKantalope)
+* [Erin (Thomas) Hook](https://github.com/KingKantalope)
 * [Edwin Soto-Villela](https://github.com/edwinsoto88)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
